@@ -1,13 +1,14 @@
 const express = require("express");
 const http = require("http");
 const path = require("path");
-var favicon = require("serve-favicon");
-var logger = require("morgan");
-var methodOverride = require("method-override");
-var session = require("express-session");
-var bodyParser = require("body-parser");
-var multer = require("multer");
-var errorHandler = require("errorhandler");
+const favicon = require("serve-favicon");
+const logger = require("morgan");
+const methodOverride = require("method-override");
+const session = require("express-session");
+const bodyParser = require("body-parser");
+const multer = require("multer");
+const errorHandler = require("errorhandler");
+const cookieParser = require("cookie-parser");
 
 const routerMahasiswa = require("./routes/mahasiswa");
 
@@ -20,14 +21,19 @@ app.use(favicon(path.join(__dirname, "public", "favicon.ico")));
 app.use(logger("dev"));
 app.use(methodOverride());
 app.use(session({ secret: "jhosbush", resave: true, saveUninitialized: true }));
-
+app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(multer({ dest: "./uploads" }).any());
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use("/mahasiswa", routerMahasiswa);
+app.use("/mahasiswa", routerMahasiswa, function (req, res, next) {
+	console.log("Cookie: " + req.cookies);
+
+	console.log("Session: " + req.session);
+	console.log("Signed Cookies: " + req.signedCookies);
+});
 
 app.use("/", function getHome(req, res) {
 	res.render("index", { title: "Home", message: "Add Data Mahasiswa" });
