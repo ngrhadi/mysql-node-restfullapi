@@ -6,7 +6,7 @@ html
   body
     div.fluid-container.bg-dark
       nav.container.flex.navbar.navbar-dark.text-light.bg-dark.justify-content-between.p-3
-            a.nav-link(href="#")
+            a.nav-link(href="/")
                | Home
             //- li.nav-item.text-decoration-none.text-dark
             a.nav-link(href="#")
@@ -18,7 +18,7 @@ html
             a.nav-link(href="#")
                | Login
             //- li.nav-item.text-decoration-none.text-dark
-            a.nav-link(href="#")
+            a.nav-link(href="/")
                | Register
             //- li.nav-item.text-decoration-none.text-dark
     h1.text-center.mt-4= message
@@ -26,32 +26,32 @@ html
       div.form-group
         label.col-sm-2.control-label(for="nama") Nama
         div.col-sm-12
-          input.form-control(type="text", name="nama", id="nama", placeholder="Nama")
+          input.form-control.mb-2(type="text", name="nama", id="nama", placeholder="Nama")
       //- input(type="text", name="nama", placeholder="Nama")
       div.form-group
         label.col-sm-2.control-label(for="nim") Nim
         div.col-sm-12
-          input.form-control(type="text", name="nim", id="nim", placeholder="Nim")
+          input.form-control.mb-2(type="text", name="nim", id="nim", placeholder="Nim")
       //- input(type="text", name="nim", placeholder="NIM")
       div.form-group
         label.col-sm-2.control-label(for="alamat") Alamat
         div.col-sm-12
-          input.form-control(type="text", name="alamat", id="alamat", placeholder="Alamat")
+          input.form-control.mb-2(type="text", name="alamat", id="alamat", placeholder="Alamat")
       //- input(type="text", name="alamat", placeholder="Alamat")
       div.form-group
         label.col-sm-2.control-label(for="email") Email
         div.col-sm-12
-          input.form-control(type="email", name="email", id="email", placeholder="Jurusan")
+          input.form-control.mb-2(type="email", name="email", id="email", placeholder="Jurusan")
       //- input(type="email", name="email", placeholder="Email")
       div.form-group
         label.col-sm-2.control-label(for="password") Password
         div.col-sm-12
-          input.form-control(type="password", name="password", id="password", placeholder="Jurusan")
+          input.form-control.mb-2(type="password", name="password", id="password", placeholder="Jurusan")
       //- input(type="password", name="password", placeholder="Password")
       div.form-group
          label.col-sm-2.control-label(for="role") Role
          div.col-sm-12
-           select.form-control(name="role", id="role")
+           select.form-control.mb-2(name="role", id="role")
              option(value="") select 
              option(value="mahasiswa") Mahasiswa
              option(value="dosen") Dosen
