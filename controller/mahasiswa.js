@@ -1,22 +1,6 @@
 const queries = require("../query/mahasiswa");
-const knex = require("../knexfile");
-const db = require("knex")(knex);
-
 const mysql = require("mysql");
-const connection = mysql.createConnection({
-	host: "localhost",
-	user: "root",
-	password: "",
-	database: "mysql",
-});
-
-connection.connect((err) => {
-	if (err) {
-		console.error("error connecting: " + err.stack);
-		return;
-	}
-	console.log("connected as id " + connection.threadId);
-});
+const { connection } = require("../config-db");
 
 const getMahasiswa = async (req, res) => {
 	try {
