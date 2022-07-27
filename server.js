@@ -45,6 +45,13 @@ app.use("/login", routerLogin);
 app.use("/", function getHome(req, res) {
 	res.render("index", { title: "Home", message: "Add Data Mahasiswa" });
 });
+app.use("/register", function getHome(req, res) {
+	res.render("register", { title: "Register", message: "Register" });
+});
+app.use("/log-in", function getHome(req, res) {
+	res.render("login", { title: "Login", message: "Login" });
+});
+
 if (app.get("env") === "development") {
 	app.use(errorHandler());
 }
